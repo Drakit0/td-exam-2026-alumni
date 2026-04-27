@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: router
-          image: gcr.io/technologia-494518/api-gw:latest
+          image: gcr.io/technologia-494518/router:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           volumeMounts:
@@ -23,7 +24,7 @@ spec:
               mountPath: /data
   volumeClaimTemplates:
     - metadata:
-        name: <placeholder>
+        name: router-data
       spec:
         accessModes: ["ReadWriteOnce"]
         storageClassName: standard

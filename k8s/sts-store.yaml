@@ -16,6 +16,7 @@ spec:
       containers:
         - name: storage
           image: gcr.io/technologia-494518/backend-storage:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           volumeMounts:
